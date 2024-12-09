@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: #f9f9f9; */
+  background: rgb(90,86,153);
+  background: radial-gradient(circle, rgba(90,86,153,1) 0%, rgba(135,135,231,1) 25%, rgba(203,208,225,1) 99%);
+
+}
+
+header {
+  /* background: rgb(90,86,153); */
+  /* background: radial-gradient(circle, rgba(90,86,153,1) 0%, rgba(135,135,231,1) 25%, rgba(203,208,225,1) 99%); */
+  /* background-color: #d277f0 ; */
+  /* background-color: rgba(210, 119, 240, 0.5) */
+  
+  color: black;
+  padding: 20px;
+  text-align: center;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 70px;
+  width: 600px;
+  margin-left: 450px;
+  opacity: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  height: 100vh;
+}
+
+.sort-section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 800px;
+  text-align: center;
+  height: 500px;
+}
+
+.sort-section label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sort-section input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.sort-section button {
+  padding: 10px 20px;
+  background-color: #6b81db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sort-section button:hover {
+  background-color: #6b81db;
+}
+
+canvas {
+  border: 1px solid #ddd;
+  background: #f4f4f4;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+
+#selection-sort-theory{
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 800px;
+  margin-left: 20px;
+  
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+}
+/* Styles for the pseudo-code section */
+#pseudo-code {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 800px;
+  margin-left: 20px;
+  
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#pseudo-code h2 {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.code-block {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  color: #333;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+.infoflex{
+  display: flex;
+}
+.code-block code {
+  /* display: block; */
+  line-height: 1.5;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SELECTION SORT VISUALIZATION</title>
+  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+  <link rel="stylesheet" href="selectionsort.css">
+</head>
+
+<body>
+
+  <header class="animate__animated animate__backInDown">
+    <h1>SELECTION SORT VISUALIZATION</h1>
+  </header>
+
+  <main>
+
+    <!-- Sorting Section -->
+    <div class="sort-section">
+      <label for="input-array">Enter array elements (comma-separated):</label>
+      <input type="text" id="input-array" placeholder="e.g., 5, 3, 8, 6, 2" min="5" max="10">
+
+      <button onclick="startSelectionSort()">Start Selection Sort</button>
+
+      <canvas id="unsortedCanvas" width="800" height="150"></canvas>
+      <canvas id="sortingCanvas" width="800" height="150"></canvas>
+    </div>
+
+    
+
+   
+    
+
+  </main>
+  <div class="infoflex">
+  <div id="selection-sort-theory">
+    <h1>Theory of Selection Sort</h1>
+    <p><strong>Selection Sort</strong> is a simple comparison-based sorting algorithm. It works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion.</p>
+  
+    <h2>How Selection Sort Works</h2>
+    <ol>
+      <li>Divide the list into two parts:
+        <ul>
+          <li><strong>Sorted portion</strong>: Initially empty.</li>
+          <li><strong>Unsorted portion</strong>: Contains all the elements of the list.</li>
+        </ul>
+      </li>
+      <li>Find the smallest element in the unsorted portion.</li>
+      <li>Swap it with the first element of the unsorted portion.</li>
+      <li>Expand the sorted portion by one element and reduce the unsorted portion.</li>
+      <li>Repeat until all elements are sorted.</li>
+    </ol>
+  
+    <h2>Example</h2>
+    <p>Given the array: <strong>[64, 25, 12, 22, 11]</strong></p>
+    <ul>
+      <li><strong>Initial Array</strong>: [64, 25, 12, 22, 11]</li>
+      <li>Smallest element is <strong>11</strong>. Swap it with <strong>64</strong>.</li>
+      <li><strong>Array after 1st pass</strong>: [11, 25, 12, 22, 64]</li>
+      <li>Smallest element in the unsorted portion is <strong>12</strong>. Swap it with <strong>25</strong>.</li>
+      <li><strong>Array after 2nd pass</strong>: [11, 12, 25, 22, 64]</li>
+      <li>Smallest element in the unsorted portion is <strong>22</strong>. Swap it with <strong>25</strong>.</li>
+      <li><strong>Array after 3rd pass</strong>: [11, 12, 22, 25, 64]</li>
+      <li><strong>Array is now sorted</strong>: [11, 12, 22, 25, 64]</li>
+    </ul>
+  
+    <h2>Time Complexity</h2>
+    <ul>
+      <li><strong>Best Case</strong>: O(n²) (No early termination)</li>
+      <li><strong>Worst Case</strong>: O(n²) (Always compares all elements)</li>
+      <li><strong>Average Case</strong>: O(n²)</li>
+    </ul>
+  
+    <h2>Space Complexity</h2>
+    <p><strong>O(1)</strong> (In-place sorting; no extra memory required).</p>
+  
+    <h2>Advantages</h2>
+    <ul>
+      <li>Simple to understand and implement.</li>
+      <li>In-place algorithm; requires minimal extra memory.</li>
+    </ul>
+  
+    <h2>Disadvantages</h2>
+    <ul>
+      <li>Inefficient for large datasets due to O(n²) time complexity.</li>
+      <li>Not stable (doesn't preserve the relative order of duplicate elements).</li>
+    </ul>
+  
+    <p style="background-color: #f9f9f9; padding: 10px; border-left: 4px solid #ccc; font-style: italic;">
+      Selection sort is mainly used when the dataset is small and memory usage is a constraint, as it uses no additional space.
+    </p>
+  </div>
+  <section id="pseudo-code">
+    <h2>Pseudo Code for Selection Sort</h2>
+    <pre class="code-block">
+      <code>
+  for i = 0 to n-1:
+      min_index = i
+      for j = i+1 to n-1:
+          if arr[j] < arr[min_index]:
+              min_index = j
+      Swap arr[i] and arr[min_index]
+      </code>
+    </pre>
+
+    <h2> Code for Selection Sort in C</h2>
+    <pre class="code-block">
+    <code>
+#include <stdio.h>
+
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        // Swap the found minimum element with the first element
+        int temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
+    }
+}
+
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    printf("Original array: \\n");
+    printArray(arr, n);
+    
+    selectionSort(arr, n);
+    
+    printf("Sorted array: \\n");
+    printArray(arr, n);
+    return 0;
+}
+    </code>
+  </pre>
+  </section>
+</div>
+  
+
+  <footer>
+    Made by Raghuveer Shinde
+  </footer>
+
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      const isVisible = section.style.display === "inline-block"
+      section.style.display = isVisible ? 'none' : 'inline-block';
+    }
+
+    function startSelectionSort() {
+      // Placeholder for Selection Sort logic
+      alert("Selection Sort started!");
+    }
+  </script>
+
+<script src="./selectionsort.js"></script>
+
+</body>
+
+</html>
