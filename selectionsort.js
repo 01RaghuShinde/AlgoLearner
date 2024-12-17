@@ -56,7 +56,7 @@ function swapAndAnimate(pos1, pos2, callback) {
     drawBox(ctx, newX1, startY, array[pos1]);
     drawBox(ctx, newX2, startY, array[pos2]);
 
-    progress += 0.03; 
+    progress += 0.0051; 
     if (progress < 1) {
       requestAnimationFrame(animateSwap); 
     } else {
